@@ -31,8 +31,14 @@ const typeDefs = gql(`
         id: ID!
         firstName: String!
         lastName: String!
+        """
+        풀네임 한글도 되나?
+        """
         fullName: String!
     }
+    """
+    Tweet object represents a resource for a Tweet
+    """
     type Tweet {
         id: ID
         text: String
@@ -44,6 +50,9 @@ const typeDefs = gql(`
     }
     type Mutation {
         postTweet(text: String, userId: ID): Tweet
+        """
+        mutation delete a tweet
+        """
         deleteTweet(id: ID!): Boolean
     }
 `);
